@@ -4,7 +4,7 @@
 
 #ifndef BALONIK_BALONIK_H
 #define BALONIK_BALONIK_H
-class balonik{
+class balonik {
 	/* Metody wykorzystane w klasie balonik.cpp pomijając gettery oraz konstruktor */
 	void zmien_wysokosc(float przyrostWysokosci);
 	void zmien_srednice(float przyrostSrednicy);

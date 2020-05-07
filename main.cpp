@@ -4,13 +4,16 @@
  * Proszę wybaczyć sposób deklaracji pól na początku klasy, ale to przyzwyczajenie z Javy.
 */
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include "balonik.cpp"
 void pompuj(balonik& balon, float powietrze) {
 	cout << "Pompuje balonik: " << balon.getNazwa() << endl;
 	float aktualnaSrednica = balon.getSrednica();
-	float srednica = (sqrt(powietrze / M_PI) * 2);
-	balon.zmien_srednice(srednica);
+	float aktualnaPowierzchnia = M_PI * pow((aktualnaSrednica / 2), 2);
+	float polePowierzchni = aktualnaPowierzchnia + powietrze;
+	float nowaSrednica = (sqrt(polePowierzchni / M_PI) * 2);
+	float przyrostSrednicy = nowaSrednica - aktualnaSrednica;
+	balon.zmien_srednice(przyrostSrednicy);
 }
 
 int main() {
